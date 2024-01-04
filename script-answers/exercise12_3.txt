@@ -1,0 +1,4 @@
+# cd usr
+# cd src
+# cd app
+# nano index.js
