@@ -1,4 +1,8 @@
+Script started on 2024-01-04 19:33:51+00:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="116" LINES="42"]
 # cd usr
 # cd src
 # cd app
-# nano index.js
+# noa^H ^H^H ^Hano index.js
+^[[?2004h^[[?1049h^[[22;0;0t^[[1;42r^[(B^[[m^[[4l^[[?7h^[[39;49m^[[?1h^[=^[[?1h^[=^[[?25l^[[39;49m^[(B^[[m^[[H^[[2J>
+
+Script done on 2024-01-04 19:36:46+00:00 [COMMAND_EXIT_CODE="0"]
