@@ -1,0 +1,8 @@
+C:\Users\marc\Documents\TIEDOSTOT\LAPIN AMK>docker container run -it ubuntu bash
+root@7d43b61044ca:/# cd usr
+root@7d43b61044ca:/usr# cd src
+root@7d43b61044ca:/usr/src# mkdir app
+root@7d43b61044ca:/usr/src# cd app
+root@7d43b61044ca:/usr/src/app# touch index.js
+root@7d43b61044ca:/usr/src/app# exit
+exit
