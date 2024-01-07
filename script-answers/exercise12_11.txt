@@ -1,0 +1,18 @@
+Script started on 2024-01-07 20:43:39+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="161" LINES="38"]
+# redis-cli
+127.0.0.1:6379> KEYS *
+1) "added_todos"
+127.0.0.1:6379> GET added_todos
+"0"
+127.0.0.1:6379> SET added_todos 9001
+OK
+127.0.0.1:6379> GET added_todos
+"9002"
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> exit
+# exit
+
+Script done on 2024-01-07 20:45:57+00:00 [COMMAND_EXIT_CODE="0"]

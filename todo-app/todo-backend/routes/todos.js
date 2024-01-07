@@ -12,7 +12,11 @@ router.get('/', async (_, res) => {
 
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
-  const currentTodos = await getAsync('added_todos');
+  let currentTodos = await getAsync('added_todos');
+  if(currentTodos === null) {
+    await setAsync('added_todos', 0);
+    currentTodos = 0;
+  }
   await setAsync('added_todos', parseInt(currentTodos, 10) + 1);
 
   const todo = await Todo.create({
