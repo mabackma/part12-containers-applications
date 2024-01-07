@@ -1,0 +1,49 @@
+Script started on 2024-01-07 18:08:13+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="161" LINES="38"]
+# mongosh -u root -p example
+Current Mongosh Log ID: 659ae89b0839efb3c1c01626
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1
+Using MongoDB:          7.0.4
+Using Mongosh:          2.1.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-01-07T16:08:12.350+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2024-01-07T16:08:12.350+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin         100.00 KiB
+config        108.00 KiB
+local          72.00 KiB
+the_database   56.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('65998ad53a182b2f20c73b67'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('65998ad53a182b2f20c73b68'),
+    text: 'Learn about containers this was edited',
+    done: true
+  }
+]
+the_database> db.todos.insertOne({
+...     text: "Increase the number of tools in my toolbelt",
+...     done: false
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId('659ae9090839efb3c1c01627')
+}
+the_database> exit
+# exit
+
+Script done on 2024-01-07 18:10:32+00:00 [COMMAND_EXIT_CODE="0"]
