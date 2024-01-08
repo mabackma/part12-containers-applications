@@ -1,8 +1,16 @@
-# The first FROM is now a stage called build-stage
-FROM node:16 AS build-stage
+# Stage 1: Testing stage
+FROM node:16 AS test-stage
 WORKDIR /usr/src/app
 
 COPY . .
+
+RUN npm test
+
+# Stage 2: Build-stage
+FROM node:16 AS build-stage
+WORKDIR /usr/src/app
+
+COPY --from=test-stage /usr/src/app /usr/src/app
 
 RUN npm ci
 
