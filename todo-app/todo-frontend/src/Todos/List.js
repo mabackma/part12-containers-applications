@@ -12,11 +12,13 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
 
   return (
     <>
-      {todos.map(todo => {
-        <Todo todo={todo} onClickDelete={onClickDelete} onClickComplete={onClickComplete} />
-      }).reduce((acc, cur) => [...acc, <hr />, cur], [])}
+      {todos.map((todo) => (
+        <React.Fragment key={todo.id}>
+          <Todo todo={todo} onClickDelete={onClickDelete} onClickComplete={onClickComplete} />
+        </React.Fragment>
+      )).reduce((acc, cur) => [...acc, <hr />, cur], [])}
     </>
-  )
+  );
 }
 
 export default TodoList

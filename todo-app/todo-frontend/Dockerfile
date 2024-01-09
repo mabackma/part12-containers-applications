@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+ENV CI=true
 RUN npm test
 
 # Stage 2: Build-stage
