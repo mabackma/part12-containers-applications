@@ -16,6 +16,6 @@ services:
       - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 8080:80
-    container_name: reverse-proxy
+    container_name: reverse-proxy-frontend
     depends_on:
       - app # wait for the frontend container to be started
