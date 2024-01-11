@@ -29,7 +29,7 @@ morgan.token('reqbody', (req) => {
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqbody'))
 
 // Import the database module
-const Contact = require('./models/contact')
+const Contact = require('./mongo/models/contact')
 
 // Gets all contacts from phonebook
 app.get('/api/persons', (request, response, next) => {
