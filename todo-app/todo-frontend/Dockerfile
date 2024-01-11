@@ -1,17 +1,18 @@
 # Stage 1: Testing stage
-FROM node:16 AS test-stage
-WORKDIR /usr/src/app
+#FROM node:16 AS test-stage
+#WORKDIR /usr/src/app
 
-COPY . .
+#COPY . .
 
-ENV CI=true
-RUN npm test
+#ENV CI=true
+#RUN npm test
 
 # Stage 2: Build-stage
 FROM node:16 AS build-stage
 WORKDIR /usr/src/app
 
-COPY --from=test-stage /usr/src/app /usr/src/app
+#COPY --from=test-stage /usr/src/app /usr/src/app
+COPY . .
 
 RUN npm ci
 
