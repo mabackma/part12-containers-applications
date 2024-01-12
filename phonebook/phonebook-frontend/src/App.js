@@ -123,14 +123,14 @@ const Person = (props) => {
   // Removes contact
   const removeContact = (event) => {
     event.preventDefault()
-
+    
     const confirmed = window.confirm(`Delete ${props.person.name} ?`)
       if(confirmed) {
         personService
-        .remove(props.person.id)
+        .remove(props.person._id)
         .then(response => {
           // Filter out the deleted person from the array
-          const updatedPersons = props.persons.filter(person => person.id !== props.person.id)
+          const updatedPersons = props.persons.filter(person => person._id !== props.person._id)
   
           // Update the state
           props.setPersons(updatedPersons)

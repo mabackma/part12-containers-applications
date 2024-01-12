@@ -1,8 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios'
 const baseUrl = `${process.env.REACT_APP_BACKEND_URL}/persons`
-//const baseUrl = 'http://localhost:3001/api/persons'
-//const baseUrl = 'https://phonebook-backend-ntn5.onrender.com/api/persons'
 
 const getAll = () => {
   const request = axios.get(baseUrl)
