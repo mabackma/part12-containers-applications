@@ -22,7 +22,7 @@ services:
       - ./phonebook-backend/:/usr/src/app
     environment: 
       - REDIS_URL=redis://redis:6379
-      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+      - MONGO_URL=mongodb://the_phonebook_username:the_phonebook_password@mongo:27017/the_phonebook_database
     ports:
       - 3001:3000
 
@@ -33,7 +33,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: the_database
+      MONGO_INITDB_DATABASE: the_phonebook_database
     volumes: 
       - ./phonebook-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - ./phonebook-backend/mongo_data:/data/db
@@ -46,13 +46,13 @@ services:
     volumes: # Declare the volume
       - ./phonebook-backend/redis_data:/data
 
-#  nginx:
-#    image: nginx:1.20.1
-#    volumes:
-#      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-#    ports:
-#      - 8080:80
-#    container_name: reverse-proxy
-#    depends_on:
-#      - app # wait for the frontend container to be started
-#      - server
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app # wait for the frontend container to be started
+      - server
