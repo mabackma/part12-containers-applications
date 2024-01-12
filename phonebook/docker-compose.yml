@@ -5,7 +5,6 @@ services:
     image: phonebook-front-dev
     build:
       context: ./phonebook-frontend # The context will pick this directory as the "build context"
-      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
     volumes:
       - ./phonebook-frontend/:/usr/src/app
     environment:
@@ -17,7 +16,6 @@ services:
     image: phonebook-backend-dev
     build:
       context: ./phonebook-backend
-      dockerfile: dev.Dockerfile
     volumes:
       - ./phonebook-backend/:/usr/src/app
     environment: 
